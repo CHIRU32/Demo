@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        #image{
+            width: 100vw;
+            height: 100vh;
+            background-image: url(./cat.png);
+            background-repeat:no-repeat;
+            display: flex;;
+            justify-content: center;
+        }
+        #a{
+            font-size: 200px;
+            position: absolute;
+            top: 50px;
+            color: yellowgreen;
+            font-family: cursive;
+            
+        }
+        #b{
+            font-size: 180px;
+            position: absolute;
+            top: 250px;
+            color: pink;
+            font-family: cursive;
+            background-image: url();
+            
+        }
+        #c{
+            font-size: 200px;
+            position: absolute;
+            top: 450px;
+            color: red;
+            font-family: cursive;
+            
+        }
+        #d{
+            position: absolute;
+            top: 180px;
+            font-size: 300px;
+            color: blueviolet;
+            font-family: cursive;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body id="image" onload="rounSec()">
+    <h1 id="a"></h1>
+    <h1 id="b"></h1>
+    <h1 id="c"></h1>
+    <h1 id="d"></h1>
+    <script>
+        function rounSec()
+        {
+        var date=new Date()
+        var dd=date.getDate();   
+        var day=date.getDay();    
+        var yy=date.getFullYear();  
+        var hh=date.getHours();  
+        var mi=date.getMinutes();
+        var ss=date.getSeconds();
+        var mo=date.getMonth();  
+        var am_pm="AM"
+            if(hh>=12)
+        {
+            am_pm="PM"
+            if(hh>=13)
+            {
+                hh=hh-12;
+            }
+        }
+        if(mo==0)
+        {
+            mo="January"
+        }
+         else if(mo==1)
+        {
+            mo="Febauray"
+        }
+        else if(mo==2)
+        {
+            mo="March"
+        }
+        else if(mo==3)
+        {
+            mo="April"
+        }
+        else if(mo==4)
+        {
+            mo="May"
+        }
+        else if(mo==5)
+        {
+            mo="June"
+        }
+        else if(mo==6)
+        {
+            mo="July"
+        }
+        else if(mo==7)
+        {
+            mo="August"
+        }
+       else  if(mo==8)
+        {
+            mo="September"
+        }
+        else if(mo==9)
+        {
+            mo="October"
+        }
+        else if(mo==10)
+        {
+            mo="November"
+        }
+        else
+        {
+            mo="December"
+        }
+        switch(day)
+        {
+            case 0:
+                  day="Sunday"
+                  document.getElementById("image").style.backgroundImage="url(./clockimage/sunday.jpg)"
+                  break;
+            case 1:
+                  day="Monday"
+                  document.getElementById("image").style.backgroundImage="url(./clockimage/monday.jpg)"
+                  break;
+            case 2:
+                  day="Tuesday"
+                  document.getElementById("image").style.backgroundImage="url(./clockimage/tuesday.jpg)"
+                  break;
+            case 3:
+                  day="Wednesday"
+                  document.getElementById("image").style.backgroundImage="url(./clockimage/wednesday.jpg)"
+                  break;
+            case 4:
+                  day="Thrusday"
+                  document.getElementById("image").style.backgroundImage="url(./clockimage/thrusday.jpg)"
+                  break;
+            case 5:
+                 day="Friday"
+                 document.getElementById("image").style.backgroundImage="url(./clockimage/friday.jpg)"
+                 break;
+            case 6:
+                day="Saturday"
+                document.getElementById("image").style.backgroundImage="url(./clockimage/saturday.jpg)"
+                break;
+        }
+
+        var totaltime=hh+":"+mi+" "+am_pm
+       document.getElementById("a").innerHTML=totaltime
+       var totaldate=dd+"/"+mo+"/"+yy
+       document.getElementById("b").innerHTML=totaldate
+       document.getElementById("c").innerHTML=day
+       document.getElementById("d").innerHTML=ss
+       var update=setTimeout(function(){rounSec()},1000);
+    }
+       console.log(dd,day,yy,hh,mi,ss,mo,am_pm)
+    </script>
+</body>
+</html>
